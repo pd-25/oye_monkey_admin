@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-body">
                     <div class="basic-form">
-                        <form action="{{ route('services.store') }}" method="POST">
+                        <form action="{{ route('products.store') }}" method="POST">
                             @csrf
                             <input type="hidden" value="salseforce" name="type">
                             <div class="form-group">

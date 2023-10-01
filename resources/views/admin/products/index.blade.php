@@ -23,38 +23,42 @@
                                     <th>SN.</th>
                                     <th>Title</th>
                                     <th>Image</th>
-                                    <th>Quantity</th>
+                                    <th>Category</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($services as $service) --}}
+                                @foreach ($products as $product)
+                             
                                     <tr>
                                         <td>#</td>
                                         <td>
-                                            {{-- {{ $service->service_name }} --}}
-                                            dd
+                                            {{ $product->title }}
+                                            
                                         </td>
                                         <td>
-                                            {{-- {{ $service->service_slug }} --}}
-                                            vv
+                                            <img style="height: 82px; width: 82px;" src="{{ @$product->previewImage['image'] }}" alt="">
+                                            
+                                            
                                         </td>
                                         <td>
-                                            {{-- {{ $service->service_slug }} --}}
-                                            32
+                                            {{ $product->category->name }}
+                                           
                                         </td>
-                                        <td><span id="status-btn{{ 2 }}">
-                                            <button class="btn btn-sm btn-primary"  onclick="changeStatus('{{ 3 }}', {{ 2}})" >
-                                                Active
+                                        <td><span id="status-btn{{ $product->id }}">
+                                            <button class="btn btn-sm {{ $product->status == 'Available' ? 'btn-success' : ($product->status == 'Inactive' ? 'bg-danger' : 'bg-warning'); }}"  onclick="changeStatus('{{ $product->id }}', {{ $product->id}})" >
+                                                {{ $product->status }}
                                             </button>
                                         </span>
                                         </td>
                                         <td>
-                                            <a href="{{ route('products.edit', 1) }}"><i
+                                            <a href="{{ route('products.show', encrypt($product->id)) }}"><i
+                                                class="ti-eye btn btn-sm btn-success"></i></a>
+                                            <a href="{{ route('products.edit', encrypt($product->id)) }}"><i
                                                     class="ti-pencil btn btn-sm btn-primary"></i></a>
                                             <form method="POST"
-                                                action="{{ route('products.destroy', 4) }}"
+                                                action="{{ route('products.destroy', encrypt($product->id)) }}"
                                                 class="action-icon">
                                                 @csrf
                                                 <input name="_method" type="hidden" value="DELETE">
@@ -67,7 +71,7 @@
                                         </td>
 
                                     </tr>
-                                {{-- @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

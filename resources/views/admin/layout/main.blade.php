@@ -23,12 +23,10 @@
 
     <link href="{{ asset('admin-asset/css/lib/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin-asset/css/lib/themify-icons.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('admin-asset/') }}css/lib/owl.carousel.min.css" rel="stylesheet" />
-    <link href="{{ asset('admin-asset/') }}css/lib/owl.theme.default.min.css" rel="stylesheet" /> 
-    <link href="{{ asset('admin-asset/') }}css/lib/weather-icons.css" rel="stylesheet" /> --}}
+    
     <link href="{{ asset('admin-asset/css/lib/menubar/sidebar.css') }}" rel="stylesheet">
     <link href="{{ asset('admin-asset/css/lib/bootstrap.min.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('admin-asset/') }}css/lib/helper.css" rel="stylesheet"> --}}
+   
     <link href="{{ asset('admin-asset/css/style.css') }}" rel="stylesheet">
 </head>
 
@@ -156,23 +154,10 @@
     <script src="{{ asset('admin-asset/js/lib/bootstrap.min.js') }}"></script>
     <script src="{{ asset('admin-asset/js/scripts.js') }}"></script>
     <!-- bootstrap -->
-
-    {{-- <script src="{{ asset('admin-asset/') }}js/lib/calendar-2/moment.latest.min.js"></script>
-    <script src="{{ asset('admin-asset/') }}js/lib/calendar-2/pignose.calendar.min.js"></script>
-    <script src="{{ asset('admin-asset/') }}js/lib/calendar-2/pignose.init.js"></script> --}}
-
-
-    {{-- <script src="{{ asset('admin-asset/') }}js/lib/weather/jquery.simpleWeather.min.js"></script>
-    <script src="{{ asset('admin-asset/') }}js/lib/weather/weather-init.js"></script>
-    <script src="{{ asset('admin-asset/') }}js/lib/circle-progress/circle-progress.min.js"></script>
-    <script src="{{ asset('admin-asset/') }}js/lib/circle-progress/circle-progress-init.js"></script> --}}
-    {{-- <script src="{{ asset('admin-asset/') }}js/lib/chartist/chartist.min.js"></script>
-    <script src="{{ asset('admin-asset/') }}js/lib/sparklinechart/jquery.sparkline.min.js"></script>
-    <script src="{{ asset('admin-asset/') }}js/lib/sparklinechart/sparkline.init.js"></script>
-    <script src="{{ asset('admin-asset/') }}js/lib/owl-carousel/owl.carousel.min.js"></script>
-    <script src="{{ asset('admin-asset/') }}js/lib/owl-carousel/owl.carousel-init.js"></script> --}}
+    <script src="{{ asset('admin-asset/js/lib/data-table/datatables.min.js') }}"></script>
+    <script src="{{ asset('admin-asset/js/lib/data-table/datatables-init.js') }}"></script>
     <!-- scripit init-->
-    <script src="{{ asset('admin-asset/js/dashboard2.js') }}"></script>
+    {{-- <script src="{{ asset('admin-asset/js/dashboard2.js') }}"></script> --}}
 </body>
 
 </html>

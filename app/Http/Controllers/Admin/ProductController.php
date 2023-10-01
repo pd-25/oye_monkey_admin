@@ -2,15 +2,23 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Core\product\ProductInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public $productInterface;
+    public function __construct(ProductInterface $productInterface)
+    {
+      $this->productInterface = $productInterface;  
+    }
    
     public function index()
     {
-       return view('admin.products.index');
+       $data['products'] = $this->productInterface->getAllProducts('admin');
+     
+       return view('admin.products.index', $data);
     }
 
    

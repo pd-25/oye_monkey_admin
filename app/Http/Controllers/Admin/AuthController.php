@@ -31,7 +31,8 @@ class AuthController extends Controller
         }else{
             return response()->json([
                 'status' => false,
-                'data' => 'No user found'
+                'data' => 'No user found',
+                'test' => 'fd'
             ]);  
         }
 

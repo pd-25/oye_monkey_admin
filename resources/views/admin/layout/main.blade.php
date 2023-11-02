@@ -39,7 +39,7 @@
                     <div class="logo"><a href="{{ route('dashboard') }}">
                             <span>{{ env('APP_NAME') }}</span>
                         </a></div>
-                    <li><a href="#"><i class="ti-calendar"></i> Site Info </a></li>
+                    <li><a href="#"><i class="ti-calendar"></i> Site Info00 </a></li>
 
 
 

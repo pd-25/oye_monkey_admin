@@ -32,7 +32,7 @@ class AuthController extends Controller
             return response()->json([
                 'status' => false,
                 'data' => 'No user found',
-                'test' => 'fd'
+                'test' => 'fd '
             ]);  
         }
 

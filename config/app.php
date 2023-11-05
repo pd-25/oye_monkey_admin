@@ -172,6 +172,7 @@ return [
 
         //my provider
         App\Services\product\ProductService::class,
+        App\Services\category\CategoryService::class,
     ])->toArray(),
 
     /*

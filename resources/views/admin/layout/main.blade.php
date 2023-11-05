@@ -23,10 +23,10 @@
 
     <link href="{{ asset('admin-asset/css/lib/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin-asset/css/lib/themify-icons.css') }}" rel="stylesheet">
-    
+
     <link href="{{ asset('admin-asset/css/lib/menubar/sidebar.css') }}" rel="stylesheet">
     <link href="{{ asset('admin-asset/css/lib/bootstrap.min.css') }}" rel="stylesheet">
-   
+
     <link href="{{ asset('admin-asset/css/style.css') }}" rel="stylesheet">
 </head>
 
@@ -57,9 +57,9 @@
                     <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Category Management <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li><a href="#">Add Category</a></li>
+                            <li><a href="{{ route('categories.create') }}">Add Category</a></li>
 
-                            <li><a href="#">All Category</a>
+                            <li><a href="{{ route('categories.index') }}">All Category</a>
                             </li>
 
 
@@ -156,8 +156,49 @@
     <!-- bootstrap -->
     <script src="{{ asset('admin-asset/js/lib/data-table/datatables.min.js') }}"></script>
     <script src="{{ asset('admin-asset/js/lib/data-table/datatables-init.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- scripit init-->
     {{-- <script src="{{ asset('admin-asset/js/dashboard2.js') }}"></script> --}}
+    <script>
+        $('.show_confirm').click(function(event) {
+
+            var form = $(this).closest("form");
+
+            var name = $(this).data("name");
+
+            //  alert(form);
+
+            event.preventDefault();
+
+            swal({
+
+                    title: `Are you sure you want to delete this data?`,
+
+                    text: "If you delete this, it will be gone forever.",
+
+                    icon: "warning",
+
+                    buttons: true,
+                    dangerMode: true,
+
+                })
+
+                .then((willDelete) => {
+
+                    if (willDelete) {
+
+                        form.submit();
+
+                    } else {
+
+                        swal("Your data file is safe!");
+
+                    }
+
+                });
+
+        });
+    </script>
 </body>
 
 </html>
